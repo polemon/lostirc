@@ -130,7 +130,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"Die aktuelle Lokalisierung (scheint) zu sein : "
+"Die aktuelle Lokalisierung (scheint) zu sein: "
 
 #: src/gtkmm/MainWindow.cpp:318
 msgid ""
@@ -169,7 +169,7 @@ msgid ""
 msgstr ""
 "\n"
 "\n"
-"(Note: Du wirst diese Warnung nur einmal pro LostIRC Sitzung sehen.)"
+"(Note: Du wirst diese Warnung nur einmal pro LostIRC-Sitzung sehen.)"
 
 #: src/gtkmm/MainWindow.cpp:362
 msgid "_LostIRC"
@@ -331,7 +331,7 @@ msgstr "Port:"
 
 #: src/gtkmm/ServerWindow.cpp:253
 msgid "Password:"
-msgstr "Paßwort:"
+msgstr "Passwort:"
 
 #: src/gtkmm/ServerWindow.cpp:267
 msgid "Commands to perform when connected:"
@@ -471,11 +471,11 @@ msgstr " Benutzer"
 
 #: src/libirc/Commands.cpp:94
 msgid "/JOIN <channel>, join a channel"
-msgstr "/JOIN <nom_canal>, betritt einen Channel"
+msgstr "/JOIN <nom_canal>, einen Channel beitreten"
 
 #: src/libirc/Commands.cpp:103
 msgid "/PART <channel> [msg], part a channel - optional with a part message"
-msgstr "/PART <channel> [msg], verläßt einen Channel - mit optionaler Nachricht"
+msgstr "/PART <channel> [msg], einen Channel verlasse - mit optionaler Nachricht"
 
 #: src/libirc/Commands.cpp:137
 msgid "/KICK <channel> <nick> [msg], kick a user from a channel."
@@ -519,11 +519,11 @@ msgstr "/MSG <nick/nom_canal> <message>, sendet eine normale Nachricht."
 
 #: src/libirc/Commands.cpp:322
 msgid "/NOTICE <nick/channel> <message>, sends a notice."
-msgstr "/NOTICE <nick/channel> <message>, sendet eine Notiz."
+msgstr "/NOTICE <nick/channel> <message>, sendet eine Mitteilung."
 
 #: src/libirc/Commands.cpp:325
 msgid "Notice to "
-msgstr "Notiz an "
+msgstr "Mitteilung an "
 
 #: src/libirc/Commands.cpp:337
 msgid "/ME <message>, sends the action to the current channel."
@@ -547,7 +547,7 @@ msgstr "/NAMES <channel>, zeigt an, wer im Channel ist."
 
 #: src/libirc/Commands.cpp:379 src/libirc/Commands.cpp:387
 msgid "/OPER <login> <password>, oper up."
-msgstr "/OPER <login> <password>, Login als Operateur."
+msgstr "/OPER <login> <password>, Login als IRC-Op."
 
 #: src/libirc/Commands.cpp:402
 msgid "/KILL <user> [reason], kill a user from the network."
@@ -559,7 +559,7 @@ msgstr "/WALLOPS <message>, sendet wallop Nachricht"
 
 #: src/libirc/Commands.cpp:422
 msgid "/DCC <actions>, perform a DCC action."
-msgstr "/DCC <actions>, vollzieht eine DCC Aktion."
+msgstr "/DCC <actions>, führt eine DCC Aktion aus."
 
 #: src/libirc/Commands.cpp:432
 msgid "No DCC with that number"
@@ -591,7 +591,7 @@ msgstr "Schlüssel nicht gefunden, `"
 
 #: src/libirc/Socket.cpp:110
 msgid "Message not sent because of locale problems"
-msgstr "Nachricht wegen lokaler Probleme nicht gesendet"
+msgstr "Nachricht wegen Lokalisierungs-Problemen nicht gesendet"
 
 #: src/libirc/Socket.cpp:285 src/libirc/Socket.cpp:292
 msgid "Error writing to pipe: "
@@ -611,7 +611,7 @@ msgstr "untätig: "
 
 #: src/libirc/Parser.cpp:880
 msgid ", signon time: "
-msgstr ", Einwahlzeit: "
+msgstr ", Anmeldezeit: "
 
 #: src/libirc/DCC.cpp:65
 msgid "DCC connected. Receiving file..."
@@ -643,7 +643,7 @@ msgstr "DCC SEND Anfrage empfangen von:"
 
 #: src/libirc/DCC.cpp:194
 msgid "Couldn't bind: "
-msgstr ""
+msgstr "Konnte nicht binden an: "
 
 #: src/libirc/DCC.cpp:201
 msgid "Connection accepted."
@@ -687,13 +687,13 @@ msgstr "Fehler beim Empfangen: "
 
 #: src/libirc/LostIRCApp.h:56
 msgid "Logging to `"
-msgstr ""
+msgstr "Schreib Logs in `"
 
 #~ msgid "_Hide Menubar"
-#~ msgstr "_Cacher le menu"
+#~ msgstr "Menüleiste _verbergen"
 
 #~ msgid "_Show Menubar"
-#~ msgstr "_Afficher le menu"
+#~ msgstr "Menüleiste _anzeigen"
 
 #~ msgid "Browse..."
-#~ msgstr "Parcourir..."
+#~ msgstr "durchsuchen..."

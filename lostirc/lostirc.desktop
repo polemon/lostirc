@@ -2,6 +2,7 @@
 Encoding=UTF-8
 Name=LostIRC
 Comment=Chat on IRC-networks
+Comment[da]=Auf IRC-Netzwerken chatten
 Comment[da]=Chat på IRC-netværk
 Comment[fr]=Chat sur les réseaux IRC
 TryExec=lostirc
