@@ -68,6 +68,10 @@ void NickList::insertUser(const ustring& nick, IRC::UserMode m)
 
     switch (m)
     {
+        case IRC::FOUNDER:
+            row[_columns.status] = "~";
+            row[_columns.priority] = 6;
+            break;
         case IRC::OWNER:
             row[_columns.status] = "*";
             row[_columns.priority] = 5;

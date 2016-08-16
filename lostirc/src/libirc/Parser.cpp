@@ -931,7 +931,9 @@ void Parser::Names(const ustring& chan, const ustring& names)
 
         for (i = nicks.begin(); i != nicks.end(); ++i)
         {
-            if ((*i)[0] == '*')
+            if ((*i)[0] == '~')
+                  c->addUser(i->substr(1), IRC::FOUNDER);
+            else if ((*i)[0] == '*')
                   c->addUser(i->substr(1), IRC::OWNER);
             else if ((*i)[0] == '!')
                   c->addUser(i->substr(1), IRC::ADMIN);
