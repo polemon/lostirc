@@ -15,7 +15,7 @@ lostirc_SOURCES =  main.cpp \
 
 lostirc_LDADD = ../libirc/libirc.a
 
-INCLUDES = $(GTKMMDEPS_CFLAGS) \
+AM_CPPFLAGS = $(GTKMMDEPS_CFLAGS) \
            -I$(top_srcdir)/src/libirc \
            -I$(top_srcdir)/intl \
            -DLOCALEDIR=\"$(datadir)/locale\" \
