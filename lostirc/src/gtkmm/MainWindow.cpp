@@ -363,11 +363,11 @@ void MainWindow::openPrefs()
     if (_prefswin.get()) {
           _prefswin->present();
     } else {
-        std::auto_ptr<Prefs> dialog(new Prefs());
+        std::unique_ptr<Prefs> dialog(new Prefs());
 
         dialog->show();
 
-        _prefswin = dialog;
+        _prefswin = std::move(dialog);
     }
 }
 
@@ -376,11 +376,11 @@ void MainWindow::openDccWindow()
     if (_dccwin.get()) {
           _dccwin->present();
     } else {
-        std::auto_ptr<DCCWindow> dialog(new DCCWindow(*this));
+        std::unique_ptr<DCCWindow> dialog(new DCCWindow(*this));
 
         dialog->show();
 
-        _dccwin = dialog;
+        _dccwin = std::move(dialog);
     }
 }
 
@@ -488,11 +488,11 @@ void MainWindow::openServerWindow()
     if (_serverwin.get()) {
           _serverwin->present();
     } else {
-        std::auto_ptr<ServerWindow> dialog(new ServerWindow(*this));
+        std::unique_ptr<ServerWindow> dialog(new ServerWindow(*this));
 
         dialog->show();
 
-        _serverwin = dialog;
+        _serverwin = std::move(dialog);
     }
 }
 
@@ -501,12 +501,12 @@ void MainWindow::openHelpIntro()
     if (_helpwin.get()) {
           _helpwin->present();
     } else {
-        std::auto_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC Quick Introduction\n\nThis help window is a quick guide to get you going with LostIRC.\nMove this window away from the LostIRC window, and use it as a quick reference window until you know the general idea.\n\nYou can connect to a server using:\n    /SERVER <hostname / ip>\n\n...and then join a channel:\n    /JOIN <channel-name>\n\nA list of all commands are available with:\n    /COMMANDS\n\nAnd you should really check out the list of key bindings:\n    /KEYBINDINGS"), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_CLOSE, false));
+        std::unique_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC Quick Introduction\n\nThis help window is a quick guide to get you going with LostIRC.\nMove this window away from the LostIRC window, and use it as a quick reference window until you know the general idea.\n\nYou can connect to a server using:\n    /SERVER <hostname / ip>\n\n...and then join a channel:\n    /JOIN <channel-name>\n\nA list of all commands are available with:\n    /COMMANDS\n\nAnd you should really check out the list of key bindings:\n    /KEYBINDINGS"), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_CLOSE, false));
 
         dialog->signal_response().connect(sigc::mem_fun(*this, &MainWindow::hideHelpIntro));
         dialog->show();
 
-        _helpwin = dialog;
+        _helpwin = std::move(dialog);
     }
 }
 
@@ -515,12 +515,12 @@ void MainWindow::openAboutWindow()
     if (_aboutwin.get()) {
           _aboutwin->present();
     } else {
-        std::auto_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC "VERSION), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK, false));
+        std::unique_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC "VERSION), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK, false));
 
         dialog->signal_response().connect(sigc::mem_fun(*this, &MainWindow::hideAboutWindow));
         dialog->show();
 
-        _aboutwin = dialog;
+        _aboutwin = std::move(dialog);
     }
 }
 

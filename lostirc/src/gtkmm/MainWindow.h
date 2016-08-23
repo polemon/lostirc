@@ -46,11 +46,11 @@ class MainWindow : public Gtk::Window, public FrontEnd
 
     Glib::RefPtr<Gtk::UIManager> _uimanager;
 
-    std::auto_ptr<Prefs> _prefswin;
-    std::auto_ptr<DCCWindow> _dccwin;
-    std::auto_ptr<ServerWindow> _serverwin;
-    std::auto_ptr<Gtk::Dialog> _helpwin;
-    std::auto_ptr<Gtk::Dialog> _aboutwin;
+    std::unique_ptr<Prefs> _prefswin;
+    std::unique_ptr<DCCWindow> _dccwin;
+    std::unique_ptr<ServerWindow> _serverwin;
+    std::unique_ptr<Gtk::Dialog> _helpwin;
+    std::unique_ptr<Gtk::Dialog> _aboutwin;
 
 #ifdef HAVE_STATUS_ICON
     Glib::RefPtr<Gtk::StatusIcon> _statusicon;
