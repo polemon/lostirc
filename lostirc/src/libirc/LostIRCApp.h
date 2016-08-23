@@ -48,7 +48,7 @@ class Log : public std::ofstream
 public:
     Log()
     {
-        _filename = "lostirc-"VERSION".log";
+        _filename = "lostirc-" VERSION ".log";
         struct stat st;
         if (stat(_filename.c_str(), &st) == 0) {
             getUseableFilename(1);

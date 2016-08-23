@@ -138,7 +138,7 @@ void Parser::parseLine(ustring& data)
         else if (command == "KICK")
               Kick(from, param, rest);
         else if (command == "NICK")
-              Nick(from, rest);
+              Nick(from, param);
         else if (command == "WALLOPS")
               Wallops(from, rest);
         else if (command == "INVITE")
@@ -439,27 +439,24 @@ void Parser::Quit(const ustring& nick, const ustring& msg)
           FE::emit(FE::get(QUIT) << findNick(nick) << msg, chans, _conn);
 }
 
-void Parser::Nick(const ustring& from, const ustring& to)
-{
+void Parser::Nick(const ustring& from, const ustring& to) {
     // When we receive an error that "nick change was too fast", 'to' will
     // be empty. just return if it is.
 
-    if (to.empty())
-          return;
+    // Is this a good idea?
+    if(to.empty()) {
+        return;
+    }
 
     // Check whethers it's us who has changed nick
-    if (findNick(from) == _conn->Session.nick) {
+    if(findNick(from) == _conn->Session.nick) {
         _conn->Session.nick = to;
     }
 
     vector<ChannelBase*> chans = _conn->findUser(findNick(from));
-
     App->fe->nick(findNick(from), to, chans, _conn);
-
     for_each(chans.begin(), chans.end(), algo::renameUser(findNick(from), to));
-
     FE::emit(FE::get(NICK) << findNick(from) << to, chans, _conn);
-
 }
 
 void Parser::Invite(const ustring& from, const ustring& rest)
