@@ -515,7 +515,7 @@ void MainWindow::openAboutWindow()
     if (_aboutwin.get()) {
           _aboutwin->present();
     } else {
-        std::unique_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC "VERSION), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK, false));
+        std::unique_ptr<Gtk::MessageDialog> dialog(new Gtk::MessageDialog(_("LostIRC " VERSION), false, Gtk::MESSAGE_INFO, Gtk::BUTTONS_OK, false));
 
         dialog->signal_response().connect(sigc::mem_fun(*this, &MainWindow::hideAboutWindow));
         dialog->show();
