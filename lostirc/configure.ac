@@ -19,7 +19,7 @@ AC_SUBST(GTKMMDEPS_LIBS)
 AM_GNU_GETTEXT_VERSION([0.14.1])
 AM_GNU_GETTEXT
 
-CXXFLAGS="$CXXFLAGS -Wall -std=c++11"
+CXXFLAGS="$CXXFLAGS -Wall -std=c++14"
 
 # Add ./configure --enable-logdebug
 AC_ARG_ENABLE(logdebug,
